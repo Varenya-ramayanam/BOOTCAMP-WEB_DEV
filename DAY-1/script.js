@@ -18,7 +18,8 @@ function calculate() {
   try {
     // Evaluate the mathematical expression in the display
     const result = eval(displayValue.replace('÷', '/').replace('×', '*'));
-    displayValue = result.toString(); // Update the displayValue with the result
+    const val = result.toFixed(4); // Round the result to 2 decimal places
+    displayValue = val.toString(); // Update the displayValue with the result
     updateDisplay(displayValue); // Update the display
   } catch (error) {
     updateDisplay('Error'); // Display error for invalid expressions
